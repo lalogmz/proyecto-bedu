@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Electrolize&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: "Electrolize", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: black;
+}
+/*Colores*/
+:root{
+    --color__principal: rgba(168, 25, 25, 0.902);
+    --color__secundario: rgb(239, 209, 15);
+    --color__terciario: rgb(23, 5, 123);
+/*colores básicos*/
+--color__blanco: white;
+--color__negro: black;
+}
+
+nav{
+    background: var(--color__secundario);
+    height: 60px;
+    width: 100%;
+}
+.logotipo{
+    width: 100px;
+    height: 80px;
+}
+label.Logo{
+    color: var(--color__principal);
+    font-size: 35px;
+    line-height: 60px;
+    padding: 0 20px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px;
+    text-decoration: none;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 60px;
+    margin: 0 7px;
+    text-decoration: none;
+}
+
+nav ul li a{
+    color: var(--color__terciario);
+    font-size: 17px;
+    font-family: "Electrolize", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+
+}
+
+a:hover{
+    background-color: var(--color__principal);
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: var(--color__principal);
+    float: right;
+    line-height: 60px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+/* . para clase , # para identificador */
+
+#check{
+    display: none;
+}
+
+@media  (max-width:720px){
+    label.logo{
+        font-size: 25px;
+        padding-left: 50px;
+    }
+    nav ul li a {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 720px){
+    .checkbtn{
+        display: block;
+    }
+    /*agregue el nav*/
+
+   nav ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: var(--color__blanco);
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 1;
+        text-decoration: none;
+    }
+    nav ul li{
+        display: block;
+        line-height: 30px;
+        text-decoration: none;
+
+    }
+    nav ul li{
+         font-size: 19px;
+         text-decoration: none;
+    }
+
+    a:hover{
+        background: var(--color__primario);
+    }
+    #check:checked ~ul{
+        left: 0%;
+    }
+}
+/*sección de imagen y bienvenida */
+
+/* carrusel */
+.carousel-inner img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+/* termina carrusel */
+
+/* nido principal */
+
+.container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.contenido__principal{
+    width: 80%;
+    margin: 3% auto;
+}
+.contenido__principal img{
+    max-width: 60%;
+    border-radius: 10px;
+    float: left;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}
+.texto__caja{
+    color: var(--color__negro);
+    font-size: 19px;
+    justify-content: center;
+    font-family: "Electrolize", sans-serif;
+    font-weight: 400;
+    font-style: normal
+}
+@media (max-width:720px){
+    .contenido__principal{
+    font-size: 19px;
+    justify-content: center;
+}
+}
+
+/** DUDA **/
+.flex__container{
+    background-color: rgb(118, 186, 255);
+    border: 5px solid rgb(10, 140, 180);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 5% auto;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+ }
+ .texto__caja h3 {
+    font-size: 30px;
+    color: var(--color__negro);
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ /* tarjeta*/
+.contenedor__tarjeta {
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+ }
+.tarjeta{
+    width: 325px;
+    background-color:var(--color__principal);
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgb(0, 0, 0,0.3);
+    overflow: hidden;
+    transition: transform 0.5s eas;
+}
+.tarjeta:hover{
+    transform: translateY(-20px);
+}
+.tarjeta img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.contenido__tarjeta{
+    padding: 20px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+.contenido__tarjeta p{
+    font-size: 20px;
+    color: var(--color__blanco);
+    font-family: "Electrolize", sans-serif;
+  font-weight: 400;
+  font-style: normal
+}
+
+.boton__tarjeta{
+    display: inline-block;
+    background-color: var(--color__blanco);
+    color: var(--color__secundario);
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+ /* termina tarjeta */
+
+ /* mapa */
+ .mapa{
+   max-width: 720px;
+   margin: 0 auto;
+ }
+ .mapa h1 {
+    font-size: 20px;
+    color: var(--color__principal);
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+ }
+
+ iframe{
+    width: 100%;
+    margin: 0 auto;
+    border: 5px solid black !important;
+ } 
+ /* termina mapa */
+
+ /* footer */
+
+ .footer {
+    background:var(--color__secundario);
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 20px;
+ }
+ .footer a{
+    font-size: 17px;
+    color: var(--color__blanco);
+    text-decoration: none;
+    list-style: none;
+ }
+ .footer .contenido__footer {
+    width: 100%;
+    margin-top: 2% 0;
+    text-decoration: none;
+ }
+
+ .footer .contenido__footer ul{
+    width: 100%;
+ }
+
+ .footer .contenido__footer ul li {
+    display: inline-block;
+    margin: 0 15px;
+    text-align: left;
+    font-family: "Electrolize", sans-serif;
+  font-weight: 400;
+  font-style: normal
+ }
+ .footer .contenido__footer a i{
+    font-size: 25px;
+    margin: 1px 10px;
+ }
+
+
+ @media (max-width:720px){
+    .footer{
+        text-align: left;
+        padding: 15px;
+    }
+
+    .footer .contenido__footer ul li a{
+        display: block;
+        margin: 20px 0px;
+        text-align: left;
+    }
+    
+ }
+
+ /** tarjeta de la pagina de fotos**/
+ .card{
+    margin: 5% auto;
+    max-width: 720px;
+    width: 90%;
+ }
+
+ .card img{
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    padding: 20px;
+ }
+
+
+ /** termina tarjeta de pagina de fotos**/
+
+ /** Hero conocenos **/
+ .hero{
+    background:linear-gradient(to bottom,rgba(199, 195, 195, 0.285),rgba(208, 206, 206, 0.774)), url("https://lh3.googleusercontent.com/p/AF1QipN2ohC9pkGE-pLFkvAcDAKsJsXH4O6kFMVTkuQS=h305-no");
+    background-size: cover;
+    height: 50vh;
+    text-align: center;
+    border-bottom: 5px solid #1C6EA4;
+    border-radius: 0px 0px 90px 31px;
+}
+
+h2{
+    color:var(--color__negro);
+    font-size: 40px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+}
+
+h3{
+    color: var(--color__blanco);
+    font-size: 25px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+}
+
+/** termina hero conocenos **/
+
+/* padre */
+.flex__container__acercade{
+    border: 0px solid var(--color__primario);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    padding-top: 90px;
+    border-radius: 20px;
+}
+ /** flex conteiner **/
+ 
+.portada__conocenos{
+    background-color: var(--color__primario);
+    background: url("./img/Diapositiva1.PNG") center no-repeat ;
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    border: solid rgb(239, 239, 239) 5px;
+    color: var(--color__blanco);
+    font-size: 35px;
+}
+
+
